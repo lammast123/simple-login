@@ -1,5 +1,15 @@
-{% extends 'base.html' %}
-{% block content %}
-<h2>Chào mừng {{ username }}!</h2>
-<p>Bạn đã đăng nhập thành công 🎉</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chào mừng</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <h2>Xin chào, {{ username }} 👋</h2>
+    <p>Bạn đã đăng nhập thành công!</p>
+    <a href="{{ url_for('login') }}">Đăng xuất</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f9fc;
+  text-align: center;
+  margin-top: 100px;
+}
+
+form {
+  background: white;
+  padding: 30px;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 200px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.card {
+  background: white;
+  padding: 40px;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+.flash {
+  color: red;
+}

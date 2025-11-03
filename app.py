@@ -15,7 +15,7 @@ def login():
 
         if username == "admin" and password == "123456":
             flash("Đăng nhập thành công!", "success")
-            return render_template('welcome.html', username=username)
+            return redirect(url_for('welcome', username=username))
         else:
             flash("Sai tên đăng nhập hoặc mật khẩu!", "danger")
             return redirect(url_for('login'))
@@ -25,8 +25,10 @@ def login():
 
 @app.route('/welcome')
 def welcome():
-    return render_template('welcome.html', username="admin")
+    username = request.args.get('username', 'Khách')
+    return render_template('welcome.html', username=username)
 
 
 if __name__ == '__main__':
+    # Cho phép chạy cả local và Render
     app.run(host='0.0.0.0', port=5000)
