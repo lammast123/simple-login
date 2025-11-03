@@ -29,6 +29,9 @@ def welcome():
     return render_template('welcome.html', username=username)
 
 
+import os
+
 if __name__ == '__main__':
-    # Cho phép chạy cả local và Render
-    app.run(host='0.0.0.0', port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
+
