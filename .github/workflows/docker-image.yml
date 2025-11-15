@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Push Docker Images
 
 on:
   push:
@@ -20,9 +20,18 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push Docker image
+      - name: Build and push Backend image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ./backend
+          file: ./backend/Dockerfile   # Bắt buộc chỉ định đường dẫn Dockerfile
           push: true
-          tags: lammast123/simple-login:latest
+          tags: lammast123/simple-login-backend:latest
+
+      - name: Build and push Frontend image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile  # Bắt buộc chỉ định đường dẫn Dockerfile
+          push: true
+          tags: lammast123/simple-login-frontend:latest
